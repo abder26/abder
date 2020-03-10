@@ -1,0 +1,32 @@
+
+<form [formGroup]="cityForm">
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-item >
+          <ion-label position="floating">Saisir une ville</ion-label>
+          <ion-input (keyup.enter)= "displayMeteo(this.cityForm.value.city)" type="text" formControlName="city"></ion-input>
+          <ion-fab-button (click)="displayMeteo(this.cityForm.value.city)" class="add" size="small" >
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-item>
+      </ion-toolbar>
+    </ion-header>
+  </ion-menu>
+  
+  
+  <div class="ion-page" main>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <!-- <ion-item>
+          <ion-label>{{this.meteo.city}}</ion-label>
+        </ion-item> -->
+        <p>{{this.meteo.city}} </p>
+      </ion-toolbar>
+    </ion-header>
+  </div>
+</form>
+
